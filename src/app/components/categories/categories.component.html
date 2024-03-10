@@ -1,0 +1,21 @@
+<section class="my-4" >
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4" *ngFor="let category of categories">
+                <div class="product p-2 cursor-pointer" (click)="getSubCategory(category._id)">
+                    <div class="overflow-hidden" style="height: 300px;"> 
+                    <img [src]="category.image" class="w-100" alt="">
+                    </div>
+                    <h5 class=" h4 my-3 text-main text-center">{{category.name}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-3">
+            <div class="col-md-4" *ngFor="let subCategory of subCategory">
+                <div class="border border-2 p-2">
+                    <h5 class="h4 my-3 text-center">{{subCategory.name}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+.product{
+    position: relative;
+}
+.heart{
+font-size: 30px;
+position: absolute;
+top: 5px;
+right: -30px;
+z-index: 99;
+transition: all 1s;
+}
+.product:hover .heart{
+    right: 5px;
+}
+.solidheart{
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 99;
+}

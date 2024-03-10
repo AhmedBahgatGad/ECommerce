@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="mb-4 mx-auto">
+    <h2 class="text-center text-main">Paid Successfully</h2>
+  </div>
+  <div class="row g-4" *ngFor="let order of allOrders">
+    <div class="col-md-4" *ngIf="order.isPaid">
+      <div class="m-auto text-center p-2">
+        <h4>
+          Products Shipped to :
+          <span class="text-main">{{ order.shippingAddress.details }}</span>
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="order.isPaid">
+      <div class="m-auto text-center p-2">
+        <p class="h4">
+          City: <span class="text-main">{{ order.shippingAddress.city }}</span>
+        </p>
+        <p class="h5">
+          User Phone :
+          <span class="text-main">{{ order.shippingAddress.phone }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="order.isPaid">
+      <div class="m-auto text-center p-2">
+        <h4>
+          Total Order Price :
+          <span class="text-main">{{ order.totalOrderPrice }} EGP</span>
+        </h4>
+        <p>
+          Shipping Price :
+          <span class="text-main">{{ order.shippingPrice }} EGP</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

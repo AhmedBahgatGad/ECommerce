@@ -1,0 +1,44 @@
+<section class="my-4 container">
+  <input
+    type="search"
+    class="form-control w-50 mx-auto my-3"
+    placeholder="Search..."
+    [(ngModel)]="searchTerm"
+  />
+  <div class="row g-4">
+    <div
+      class="col-md-3"
+      *ngFor="let product of products | search : searchTerm"
+    >
+      <div class="product p-2">
+        <div [routerLink]="['/details', product._id]" class="cursor-pointer">
+          <img [src]="product.imageCover" class="w-100" [alt]="product.title" />
+          <h3 class="h6 text-main">{{ product.category.name }}</h3>
+          <h4 class="h6">
+            {{ product.title | termText : 2 }}
+          </h4>
+          <div class="d-flex align-items-center justify-content-between">
+            <span>{{ product.price }} EGP</span>
+            <div>
+              <i class="fas fa-star rating-color"></i
+              ><span class="text-muted">{{ product.ratingsAverage }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-end">
+          <i *ngIf="!wishListData.includes(product._id)"
+            class="fa-regular cursor-pointer fa-heart heart"
+            (click)="addToWishList(product._id)"
+          ></i>
+          <i *ngIf="wishListData.includes(product._id)"
+            class="fa-solid fa-heart fa-2x text-danger solidheart cursor-pointer"
+            (click)="removeWish(product._id)"
+          ></i>
+        </div>
+        <button (click)="addCart(product._id)" class="btn-main w-100">
+          Add Product
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
