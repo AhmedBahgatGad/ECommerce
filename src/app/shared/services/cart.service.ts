@@ -35,7 +35,7 @@ export class CartService {
     })
   }
   checkOut(cartId:string, userData:object):Observable<any>{
-    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://github.com/AhmedBahgatGad/ECommerce.git`,
+    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://ahmedbahgatgad.github.io/ECommerce`,
     {
       shippingAddress: userData
     })
